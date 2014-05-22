@@ -2,9 +2,9 @@ import os
 import sys
 import time
 from stat import ST_SIZE
-from ulogstash.base import Input
+from ulogstash.inputs import base
 
-class File(Input):
+class File(base.Input):
     def follow(self, filename):
         fd = open(filename, 'r')
         file_len = os.stat(filename)[ST_SIZE]
