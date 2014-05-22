@@ -1,0 +1,2 @@
+SYSLOG_RE = r"^(?P<month>[a-zA-Z]{3})\s+(?P<day>\d\d?)\s(?P<hour>\d\d)\:(?P<minute>\d\d):(?P<second>\d\d)(?:\s(?P<suppliedhost>[a-zA-Z0-9_-]+))?\s(?P<host>[a-zA-Z0-9_-]+)\s(?P<process>[a-zA-Z0-9\/_-]+)(\[(?P<pid>\d+)\])?:\s(?P<message>.+)$"
+SUDO_RE = r"^(?P<uid>\w+)\s\:\s(\w+)\=(?P<tty>[a-zA-Z0-9\/_-]+)\s\;\s(\w+)\=(?P<pwd>[a-zA-Z0-9\/_-]+)\s\;\s(\w+)\=(?P<user>[a-zA-Z0-9\/_-]+)\s\;\s(\w+)\=(?P<message>.+)$"
