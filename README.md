@@ -1,4 +1,4 @@
-### Howto
+### Example
 ```
 from ulogstash.inputs import file
 from ulogstash.patterns import SYSLOG_RE, SUDO_RE
@@ -23,7 +23,7 @@ def sudo_log(filename):
                 print sudo
                 #logger.info(sudo)
 
-def jenkins_log(filename):
+def my_multiline_log(filename):
     input = file.File()
     loglines = input.follow(filename)
     for line in loglines:
@@ -34,5 +34,5 @@ def jenkins_log(filename):
 
 if __name__ == '__main__':
     Process(target=sudo_log, args=('./test-1.log',)).start()
-    Process(target=jenkins_log, args=('./test-2.log',)).start()
+    Process(target=my_multiline_log, args=('./test-2.log',)).start()
 ```
